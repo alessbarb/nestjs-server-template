@@ -36,5 +36,10 @@ lerna-debug.log*
 
 # Others
 /src/mocks
-./.*
-./*.json
+.eslintrc.js
+.prettierrc
+nest-cli.json
+package-lock.json
+package.json
+tsconfig.build.json
+tsconfig.json

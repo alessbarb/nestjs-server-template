@@ -4,7 +4,7 @@ import { Model } from 'mongoose';
 import { User } from './entities/user.entity';
 import { CreateUserDto } from './dtos/create-user.dto';
 import { UpdateUserDto } from './dtos/update-user.dto';
-import { LoggerConfig } from 'src/logger/logger.config';
+import { LoggerConfig } from '../logger/logger.config';
 
 @Injectable()
 export class UserService {

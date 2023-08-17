@@ -11,7 +11,7 @@ import {
 import { UserService } from './user.service';
 import { CreateUserDto } from './dtos/create-user.dto';
 import { UpdateUserDto } from './dtos/update-user.dto';
-import { LoggerConfig } from 'src/logger/logger.config';
+import { LoggerConfig } from '../logger/logger.config';
 
 @Controller('user')
 export class UserController {

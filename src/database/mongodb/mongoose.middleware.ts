@@ -1,5 +1,5 @@
 import { Injectable, NestMiddleware } from '@nestjs/common';
-import { LoggerConfig } from 'src/logger/logger.config';
+import { LoggerConfig } from '../../logger/logger.config';
 import mongoose from 'mongoose';
 
 @Injectable()
