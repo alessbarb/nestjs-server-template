@@ -1,3 +1,4 @@
+import { AuthModule } from './auth/auth.module';
 import {
   Module,
   MiddlewareConsumer,
@@ -16,10 +17,11 @@ import { DatabaseModule } from './database/database.module';
 import { LoggerModule } from './logger/logger.module';
 import { LoggerConfig } from './logger/logger.config';
 
-import { UserModule } from './user/user.module';
+import { UserModule } from './api/user/user.module';
 
 @Module({
   imports: [
+    AuthModule,
     ConfigModule,
     ThrottlerModule.forRoot({
       ttl: 60,
