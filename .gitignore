@@ -1,12 +1,11 @@
 # compiled output
+.env
+package-lock.json
+.prettierrc
 /dist
 /node_modules
-
-# own coverage
 .eslintrc.js
-.prettierrc
 nest-cli.json
-package-lock.json
 package.json
 tsconfig.build.json
 tsconfig.json
