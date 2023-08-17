@@ -2,7 +2,7 @@ import { Injectable, NestMiddleware } from '@nestjs/common';
 import { Request, Response, NextFunction } from 'express';
 import { LoggerConfig } from './logger.config';
 import { MaskingUtil } from '../common/utils/masking.utils';
-import { v4 as uuidv4 } from 'uuid';
+import UUIDv4 from '../common/utils/uuidv4.utils';
 
 @Injectable()
 export class LoggerMiddleware implements NestMiddleware {
@@ -10,7 +10,7 @@ export class LoggerMiddleware implements NestMiddleware {
     const logger = LoggerConfig.getInstance(); // Inicializamos el logger aquí
     const { ip, url, method, originalUrl, headers, body } = req;
     const userAgent = req.get('user-agent') || '';
-    const requestId = uuidv4();
+    const requestId = UUIDv4.generate();
 
     req['requestId'] = requestId;
 

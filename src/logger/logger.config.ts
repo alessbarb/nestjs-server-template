@@ -1,7 +1,7 @@
 import { transports, format, createLogger, Logger } from 'winston';
 import 'winston-daily-rotate-file';
 import { MaskingUtil } from '../common/utils/masking.utils';
-import * as crypto from 'crypto';
+import UUIDv4 from '../common/utils/uuidv4.utils';
 
 // Niveles personalizados de Winston
 const winstonLevels = {
@@ -37,7 +37,7 @@ export class LoggerConfig {
   );
 
   private static addUUID = format((info) => {
-    info.uuid = uuidv4();
+    info.uuid = UUIDv4.generate();
     return info;
   })();
 
@@ -132,12 +132,4 @@ export class LoggerConfig {
     }
     return this.instance;
   }
-}
-
-function uuidv4(): string {
-  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-    const r: number = crypto.randomBytes(1)[0] % 16 | 0;
-    const v: number = c === 'x' ? r : (r & 0x3) | 0x8;
-    return v.toString(16);
-  });
 }
